@@ -1,34 +1,30 @@
-var add = function(number1, number2) {
-  return number1 + number2;
-};
-var add = function(number1, number2) {
-  return number1 + number2;
-};
 
-alert(add(10,5));
+// Business (or back-end) logic:
+
 var add = function(number1, number2) {
   return number1 + number2;
 };
 
-var number1 =parseInt(prompt("number1:"));
-var number2 = parseInt(prompt("number2:"));
-
-alert(add(number1, number2));
-
-
-var height = function(height) {
-  return height * height;
-};
-var weight = function(weight) {
-  return weight;
+var subtract = function(number1, number2) {
+  return number1 - number2;
 };
 
-var multiply = function(num1, num2) {
-  return num1*num2;
-}
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
 
+var divide = function(number1, number2) {
+  return number1 / number2;
+};
 
-var height = parseInt(prompt("height:"));
-var weight = parseInt(prompt("weight:"));
+// User interface (or front-end) logic:
 
-alert((multiply(height, height) /weight));
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = (add(number1, number2));
+    $("#output").text(result);
+  });
+});
